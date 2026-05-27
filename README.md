@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://media.stux.group/global/logo.png" width="200" alt="StuxGroup Logo">
+</p>
+
 # GitHub Pages Redirect
 
 A simple template for redirecting your GitHub Pages site (username.github.io) to your custom domain.
@@ -57,3 +61,7 @@ Feel free to use this template for your own projects!
 ## Support
 
 Have questions? Check the [GitHub Pages documentation](https://pages.github.com/) or open an issue in this repository.
+
+---
+
+Made by [StuxGroup](https://github.com/StuxGroup)

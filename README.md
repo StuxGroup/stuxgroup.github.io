@@ -66,4 +66,4 @@ Have questions? Check the [GitHub Pages documentation](https://pages.github.com/
 
 Made by [Stux.Group](https://github.com/StuxGroup)
 
-*Stux.Group is the parent of the Stux.Group Brand of Companies, including [Stux.Cloud](https://github.com/StuxCloud) and [Stuxedo](https://github.com/Stuxedo).*
+*Stux.Group is the parent of the Stux.Group Brand of Companies, including [Stux.Cloud](https://github.com/StuxCloud), [Stuxedo](https://github.com/Stuxedo) and [StuxAPIs](https://github.com/StuxAPIs).*

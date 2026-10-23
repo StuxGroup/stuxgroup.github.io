@@ -21,10 +21,22 @@ python3 -m http.server 8000
 
 ## Versioning and changelog
 
-- The version lives in `VERSION.md` (a bare version string) — bump it on every release, following [Semantic Versioning](https://semver.org/)
-- Every release gets a `CHANGELOG.md` entry using `### Added` / `### Changed` / `### Fixed` subsections
-- `commit.sh` (bash) and `commit.bat` (Windows) read `VERSION.md` to commit and tag a release — no need to edit them per release
+- This repo follows [Date Versioning](https://datevers.ing). The version lives in `VERSION.md` as a bare version string (no `v`): the UTC release date as `YY.MM.DD`, or `YY.MM.DD-N` for the second, third... release on the same UTC day (`-1`, `-2`, ...). Use UTC (`date -u +%y.%m.%d`), not local time: just after midnight in the UK it is still the previous day in UTC. Never use a future date.
+- To pick the next version, take today's UTC date; if a `vYY.MM.DD` tag already exists for it, use the next free `-N` (check with `git tag -l "vYY.MM.DD*"`).
+- Every release gets a `CHANGELOG.md` entry headed `## vYY.MM.DD`, using `###` subsections in this order: Added, Changed, Fixed, Removed, Security, Deprecated
+- `commit.sh` (bash) and `commit.bat` (Windows) read `VERSION.md` to commit and tag a release as `vYY.MM.DD` — no need to edit them per release. They refuse a version that isn't a valid Date Version or is dated in the future (UTC), warn if it's dated before today, and never push (they print the push command instead)
+
+## Tests
+
+Run the dependency-free test suite with:
+
+```bash
+bash tests/run.sh
+```
+
+It checks that `VERSION.md` is a valid Date Version on a real calendar date and matches the newest `CHANGELOG.md` entry.
 
 ## Before committing
 
+- Run `bash tests/run.sh`
 - Open `index.html` in a browser and confirm the redirect fires correctly

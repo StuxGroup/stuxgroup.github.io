@@ -3,7 +3,19 @@
 All notable changes to stuxgroup.github.io are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project follows [Date Versioning](https://datevers.ing): each version is the UTC release
+date as `YY.MM.DD`, with `-1`, `-2`... for later releases the same day. Versions up to v1.0.1 used
+Semantic Versioning.
+
+## v26.10.23
+
+### Added
+- `tests/run.sh`, a small dependency-free test runner, with a check that `VERSION.md` is a valid Date Version, a real calendar date, and matches the newest `CHANGELOG.md` entry
+
+### Changed
+- Switched from Semantic Versioning (last version v1.0.1) to [Date Versioning](https://datevers.ing): versions are now the UTC release date as `YY.MM.DD`, plus `-1`, `-2`... for later releases the same day
+- `commit.sh`/`commit.bat` now refuse to release a `VERSION.md` that isn't a valid Date Version or is dated in the future (UTC), and warn when it's dated before today
+- `README.md` gained a Versioning section, and `CONTRIBUTING.md`'s versioning notes describe Date Versioning and how to run the tests
 
 ## v1.0.1
 

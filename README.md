@@ -27,6 +27,8 @@ Edit both URLs in `index.html`:
 
 This repo follows [Date Versioning](https://datevers.ing): each version is the UTC release date as `YY.MM.DD` (for example `26.10.23`), with `-1`, `-2`... for later releases the same day. The current version is in [`VERSION.md`](VERSION.md) and every release is described in [`CHANGELOG.md`](CHANGELOG.md). Versions up to v1.0.1 used Semantic Versioning.
 
+Releases are committed and tagged on the `test` branch and go live when the pull request from `test` into `main` is merged; see [Branches](CONTRIBUTING.md#branches).
+
 ## Branches
 
 Work happens on `test` (or a branch off it), never on `main`. Changes reach `main`, and the live redirect, only through a pull request from `test`; the release commit and tag are made on `test`. See [CONTRIBUTING.md](CONTRIBUTING.md).

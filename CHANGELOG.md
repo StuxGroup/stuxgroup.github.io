@@ -7,6 +7,18 @@ and this project follows [Date Versioning](https://datevers.ing): each version i
 date as `YY.MM.DD`, with `-1`, `-2`... for later releases the same day. Versions up to v1.0.1 used
 Semantic Versioning.
 
+## v26.11.06
+
+### Changed
+
+- `README.md` describes this repo as it is, Stux.Group's own redirect from stuxgroup.github.io to the StuxGroup
+  organization on GitHub, instead of the generic template text (the template lives on as
+  [GitHub Pages Redirect](https://github.com/StuxGroup/GitHubPagesRedirect)). It no longer claims paths are kept
+- `README.md` and `CONTRIBUTING.md` show the light/dark Stux.Group logo, and describe the branch flow: work and
+  release tags on `test`, reaching `main` through a pull request. `commit.sh` and `commit.bat` suggest pushing
+  to `test`
+- The README footer names every Stux.Group brand
+
 ## v26.10.23
 
 ### Added

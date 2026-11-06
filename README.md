@@ -1,73 +1,42 @@
 <p align="center">
-  <img src="https://global.media.stux.group/logo.png" height="100" alt="Stux.Group Logo">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://global.media.stux.group/logo-light.png"><source media="(prefers-color-scheme: light)" srcset="https://global.media.stux.group/logo-dark.png"><img src="https://global.media.stux.group/logo-dark.png" height="100" alt="Stux.Group Logo"></picture>
 </p>
 
-# GitHub Pages Redirect
+# stuxgroup.github.io
 
-A simple template for redirecting your GitHub Pages site (username.github.io) to your custom domain.
+Stux.Group's GitHub Pages site. It has one job: anyone who visits [stuxgroup.github.io](https://stuxgroup.github.io) is sent straight to the [StuxGroup organization on GitHub](https://github.com/StuxGroup).
 
-## Features
+Want the same for your own `username.github.io`? Use the reusable template, [GitHub Pages Redirect](https://github.com/StuxGroup/GitHubPagesRedirect), which forwards to your custom domain and keeps the path.
 
-- ✨ Lightweight and fast redirect solution
-- 🎯 Easy to set up in minutes
-- 📱 Works on all devices and browsers
-- 🔗 Preserves URL paths during redirect
+## How it works
 
-## Quick Start
+`index.html` is a minimal page with a meta refresh and a canonical link to `https://github.com/StuxGroup`, so the redirect is immediate and needs no JavaScript.
 
-1. **Fork or use this template** to create a new repository named `username.github.io`
-2. **Update the domain** in the HTML file:
-   - Replace `example.com` with your actual domain
-3. **Enable GitHub Pages** in your repository settings
-4. **Visit** `https://username.github.io` to test the redirect
+`.github/workflows/pages.yml` deploys it to GitHub Pages through Actions whenever `main` changes (or when run by hand), rather than relying on the legacy branch build.
 
-## How It Works
+## Changing the target
 
-This template uses a simple HTML meta refresh to redirect visitors from your GitHub Pages URL to your custom domain. The redirect happens automatically when users visit your `username.github.io` page.
+Edit both URLs in `index.html`:
 
-## Installation
-
-### Option 1: Using as a Template
-1. Click **"Use this template"** on the GitHub repository page
-2. Name your repository `username.github.io` (replace `username` with your GitHub username)
-3. Customize the domain in `index.html`
-
-### Option 2: Manual Setup
-1. Create a new repository named `username.github.io`
-2. Copy the contents of this template to your repository
-3. Update the redirect URL in `index.html`
-4. Push to GitHub
-
-## Configuration
-
-Edit `index.html` and change this line:
 ```html
-<meta http-equiv="refresh" content="0;url=https://example.com" />
-<link rel="canonical" href="https://example.com" />
+<meta http-equiv="refresh" content="0;url=https://github.com/StuxGroup" />
+<link rel="canonical" href="https://github.com/StuxGroup" />
 ```
-
-Replace `https://example.com` with your actual domain.
-
-## Troubleshooting
-
-- **Redirect not working?** Ensure your repository is named exactly `username.github.io` and GitHub Pages is enabled
-- **Need to change the redirect delay?** Modify the `content="0;url=..."` value (0 = immediate)
-- **Want to customize the loading page?** Edit the HTML content before the meta redirect tag
 
 ## Versioning
 
 This repo follows [Date Versioning](https://datevers.ing): each version is the UTC release date as `YY.MM.DD` (for example `26.10.23`), with `-1`, `-2`... for later releases the same day. The current version is in [`VERSION.md`](VERSION.md) and every release is described in [`CHANGELOG.md`](CHANGELOG.md). Versions up to v1.0.1 used Semantic Versioning.
 
+## Branches
+
+Work happens on `test` (or a branch off it), never on `main`. Changes reach `main`, and the live redirect, only through a pull request from `test`; the release commit and tag are made on `test`. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
-Feel free to use this template for your own projects!
-
-## Support
-
-Have questions? Check the [GitHub Pages documentation](https://pages.github.com/) or open an issue in this repository.
+Copyright © Stux.Group. All rights reserved.
 
 ---
 
 Made by [Stux.Group](https://github.com/StuxGroup)
 
-*Stux.Group is the parent of the Stux.Group Brand of Companies, including [Stux.Cloud](https://github.com/StuxCloud), [Stuxedo](https://github.com/Stuxedo) and [StuxAPIs](https://github.com/StuxAPIs).*
+*Stux.Group is the parent of the Stux.Group Brand of Companies: [Stuxedo](https://github.com/Stuxedo), [Stux.Dev](https://github.com/StuxDev), [Stux.Cloud](https://github.com/StuxCloud), [StuxAPIs](https://github.com/StuxAPIs), [Stux.Music](https://github.com/StuxMusic), [Stux.Digital](https://github.com/StuxDigital), [Stux.Design](https://github.com/StuxDesign) and [Stux.Games](https://github.com/StuxGames).*

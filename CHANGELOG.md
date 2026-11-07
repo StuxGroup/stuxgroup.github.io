@@ -7,6 +7,17 @@ and this project follows [Date Versioning](https://datevers.ing): each version i
 date as `YY.MM.DD`, with `-1`, `-2`... for later releases the same day. Versions up to v1.0.1 used
 Semantic Versioning.
 
+## v26.11.06-1
+
+### Added
+
+- A **Branches** section in `CONTRIBUTING.md`: work on `test`, reach `main` only through a pull request that needs CI to pass and is merged by Leo, with release commits and tags made on `test`
+- A CI workflow (`.github/workflows/ci.yml`) that runs the tests on pushes to `main` and `test` and on pull requests
+
+### Changed
+
+- `README.md`'s Versioning section says releases are tagged on `test` and go live when the pull request into `main` is merged
+
 ## v26.11.06
 
 ### Changed

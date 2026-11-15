@@ -7,6 +7,16 @@ and this project follows [Date Versioning](https://datevers.ing): each version i
 date as `YY.MM.DD`, with `-1`, `-2`... for later releases the same day. Versions up to v1.0.1 used
 Semantic Versioning.
 
+## v26.11.15-1
+
+### Changed
+
+- **Three-branch flow: `test` → `staging` → `main`.** Work and releases stay on `test`; `staging` only changes
+  through a pull request from `test`, and `main` (live) only through one from `staging`. `commit.sh` /
+  `commit.bat` refuse to run on `staging` or `main`, and print the push command and both `gh pr create` commands.
+  CI also runs on `staging` pushes and on pull requests into `staging`; deploys still come only from `main`.
+  CONTRIBUTING's "Branches and going live" and the README describe it
+
 ## v26.11.06-1
 
 ### Added
